@@ -1,0 +1,60 @@
+---
+import '../styles/global.css'
+import Analytics from '@vercel/analytics/astro'
+
+interface Props {
+  title: string
+  description?: string
+}
+
+const { title, description = "The community hub for Clawd.bot skills, ecosystem data, and resources." } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="bg-zinc-950 text-zinc-100 min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-zinc-800">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="font-bold text-xl flex items-center gap-2">
+          <span class="text-2xl">🦞</span>
+          <span>clawd<span class="text-orange-400">.directory</span></span>
+        </a>
+        <nav class="flex gap-6 text-sm">
+          <a href="/#skills" class="hover:text-orange-400 transition">Skills</a>
+          <a href="/#data" class="hover:text-orange-400 transition">Data</a>
+          <a href="/blog" class="hover:text-orange-400 transition">Blog</a>
+          <a href="/#services" class="hover:text-orange-400 transition">Services</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800">
+      <div class="max-w-6xl mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="flex items-center gap-2 text-zinc-500 text-sm">
+            <span>🦞</span>
+            <span>Built for the Clawd.bot community</span>
+          </div>
+          <div class="flex gap-6 text-sm text-zinc-400">
+            <a href="https://github.com/clawdbot/clawdbot" class="hover:text-zinc-100 transition">GitHub</a>
+            <a href="https://clawdhub.com" class="hover:text-zinc-100 transition">ClawdHub</a>
+            <a href="https://clawd.bot" class="hover:text-zinc-100 transition">clawd.bot</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <Analytics />
+  </body>
+</html>

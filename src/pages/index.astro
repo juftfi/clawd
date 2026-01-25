@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import Analytics from '@vercel/analytics/astro'
 
 const skills = [
   { name: "Expense Tracker Pro", desc: "Track spending with natural language", category: "Finance", installs: "2.4K" },
@@ -45,6 +46,7 @@ const categories = [
         </div>
         <nav class="flex gap-6 text-sm">
           <a href="#skills" class="hover:text-orange-400 transition">Skills</a>
+          <a href="/blog" class="hover:text-orange-400 transition">Blog</a>
           <a href="#data" class="hover:text-orange-400 transition">Data</a>
           <a href="#newsletter" class="hover:text-orange-400 transition">Newsletter</a>
           <a href="#services" class="hover:text-orange-400 transition">Services</a>
@@ -314,5 +316,6 @@ const categories = [
         </div>
       </div>
     </footer>
+    <Analytics />
   </body>
 </html>
