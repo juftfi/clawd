@@ -1,0 +1,318 @@
+---
+import '../styles/global.css'
+
+const skills = [
+  { name: "Expense Tracker Pro", desc: "Track spending with natural language", category: "Finance", installs: "2.4K" },
+  { name: "Portfolio Watcher", desc: "Monitor stocks & crypto, price alerts", category: "Finance", installs: "1.8K" },
+  { name: "Habit Tracker", desc: "Build streaks, get reminders", category: "Health", installs: "3.1K" },
+  { name: "Newsletter Digest", desc: "AI summaries of your inbox", category: "Productivity", installs: "2.9K" },
+  { name: "Workout Logger", desc: "Log exercises, track PRs", category: "Health", installs: "1.5K" },
+  { name: "Meeting Prep", desc: "Auto-brief before every call", category: "Productivity", installs: "4.2K" },
+]
+
+const stats = {
+  stars: "10,145",
+  skills: "100+",
+  discord: "5,000+",
+  integrations: "57"
+}
+
+const categories = [
+  { name: "Productivity", count: 24, icon: "📋" },
+  { name: "Finance", count: 18, icon: "💰" },
+  { name: "Health", count: 12, icon: "🏃" },
+  { name: "Developer", count: 21, icon: "⚡" },
+  { name: "Smart Home", count: 8, icon: "🏠" },
+  { name: "Communication", count: 15, icon: "💬" },
+]
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Clawd Directory - Skills, Data & Resources for Clawd.bot</title>
+    <meta name="description" content="The community hub for Clawd.bot skills, ecosystem data, and resources. Browse 100+ skills, track growth metrics, and level up your AI assistant." />
+  </head>
+  <body class="bg-zinc-950 text-zinc-100 min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-zinc-800">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="font-bold text-xl flex items-center gap-2">
+          <span class="text-2xl">🦞</span>
+          <span>clawd<span class="text-orange-400">.directory</span></span>
+        </div>
+        <nav class="flex gap-6 text-sm">
+          <a href="#skills" class="hover:text-orange-400 transition">Skills</a>
+          <a href="#data" class="hover:text-orange-400 transition">Data</a>
+          <a href="#newsletter" class="hover:text-orange-400 transition">Newsletter</a>
+          <a href="#services" class="hover:text-orange-400 transition">Services</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-400/10 text-orange-400 text-sm rounded-full mb-6">
+        <span>🦞</span>
+        <span>The Clawd.bot Ecosystem Hub</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        Browse skills.<br/>
+        <span class="text-orange-400">Track the ecosystem.</span>
+      </h1>
+      <p class="text-xl text-zinc-400 max-w-2xl mx-auto mb-10">
+        100+ community skills. Live metrics. Everything you need to get the most out of your AI lobster.
+      </p>
+      <div class="flex gap-4 justify-center">
+        <a href="#skills" class="px-6 py-3 bg-orange-500 hover:bg-orange-400 text-zinc-950 font-semibold rounded-lg transition">
+          Explore Skills
+        </a>
+        <a href="https://github.com/clawdbot/clawdbot" class="px-6 py-3 border border-zinc-700 hover:border-zinc-500 rounded-lg transition">
+          View on GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- Live Stats Bar -->
+    <section class="border-y border-zinc-800 bg-zinc-900/50">
+      <div class="max-w-6xl mx-auto px-6 py-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-3xl font-bold text-orange-400">{stats.stars}</div>
+            <div class="text-zinc-500 text-sm">GitHub Stars</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-orange-400">{stats.skills}</div>
+            <div class="text-zinc-500 text-sm">Community Skills</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-orange-400">{stats.discord}</div>
+            <div class="text-zinc-500 text-sm">Discord Members</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-orange-400">{stats.integrations}</div>
+            <div class="text-zinc-500 text-sm">Integrations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skill Categories -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Browse by Category</h2>
+        <p class="text-zinc-400">Find the perfect skill for your workflow</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {categories.map((cat) => (
+          <a href={`#${cat.name.toLowerCase()}`} class="bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-center hover:border-orange-500/50 transition group">
+            <div class="text-2xl mb-2">{cat.icon}</div>
+            <div class="font-medium group-hover:text-orange-400 transition">{cat.name}</div>
+            <div class="text-zinc-500 text-sm">{cat.count} skills</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Featured Skills -->
+    <section id="skills" class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex justify-between items-end mb-10">
+        <div>
+          <h2 class="text-3xl font-bold mb-2">Featured Skills</h2>
+          <p class="text-zinc-400">Most popular from ClawdHub</p>
+        </div>
+        <a href="https://clawdhub.com" class="text-orange-400 hover:underline text-sm">View all →</a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.map((skill) => (
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-orange-500/50 transition">
+            <div class="flex justify-between items-start mb-3">
+              <span class="inline-block px-2 py-1 text-xs bg-zinc-800 text-zinc-400 rounded">{skill.category}</span>
+              <span class="text-xs text-zinc-500">{skill.installs} installs</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">{skill.name}</h3>
+            <p class="text-zinc-400 text-sm mb-4">{skill.desc}</p>
+            <code class="text-xs text-orange-400 bg-zinc-800 px-2 py-1 rounded">
+              /install {skill.name.toLowerCase().replace(/ /g, '-')}
+            </code>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Data Dashboard -->
+    <section id="data" class="bg-zinc-900 border-y border-zinc-800">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-3">Ecosystem Growth</h2>
+          <p class="text-zinc-400">Live data from the Clawd.bot universe</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Growth Chart Placeholder -->
+          <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-6">
+            <h3 class="font-semibold mb-4 flex items-center gap-2">
+              <span class="text-orange-400">📈</span> GitHub Stars (Last 30 Days)
+            </h3>
+            <div class="h-48 flex items-end justify-between gap-1">
+              {[35, 42, 38, 55, 48, 62, 58, 71, 65, 78, 82, 75, 88, 92, 85, 95, 89, 102, 98, 108, 115, 105, 120, 125, 118, 132, 128, 140, 145, 150].map((h, i) => (
+                <div class="flex-1 bg-orange-500/60 rounded-t hover:bg-orange-400 transition" style={`height: ${h * 0.32}%`}></div>
+              ))}
+            </div>
+            <div class="flex justify-between text-xs text-zinc-500 mt-2">
+              <span>30d ago</span>
+              <span>Today</span>
+            </div>
+          </div>
+
+          <!-- Key Metrics -->
+          <div class="space-y-4">
+            <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-6">
+              <div class="flex justify-between items-center">
+                <div>
+                  <div class="text-zinc-400 text-sm">Growth Rate</div>
+                  <div class="text-2xl font-bold">+170 stars/day</div>
+                </div>
+                <div class="text-green-400 text-sm">↑ 23%</div>
+              </div>
+            </div>
+            <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-6">
+              <div class="flex justify-between items-center">
+                <div>
+                  <div class="text-zinc-400 text-sm">Open Issues</div>
+                  <div class="text-2xl font-bold">184</div>
+                </div>
+                <div class="text-orange-400 text-sm">Active development</div>
+              </div>
+            </div>
+            <div class="bg-zinc-800 border border-zinc-700 rounded-xl p-6">
+              <div class="flex justify-between items-center">
+                <div>
+                  <div class="text-zinc-400 text-sm">Contributors</div>
+                  <div class="text-2xl font-bold">30</div>
+                </div>
+                <div class="text-zinc-500 text-sm">+5 this month</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integration Grid -->
+        <div class="mt-12">
+          <h3 class="font-semibold mb-6 text-center">57 Supported Integrations</h3>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["WhatsApp", "Telegram", "Discord", "Slack", "Signal", "iMessage", "Notion", "Obsidian", "GitHub", "Spotify", "Hue", "Home Assistant"].map((int) => (
+              <span class="px-3 py-1.5 bg-zinc-800 border border-zinc-700 rounded-full text-sm text-zinc-300">{int}</span>
+            ))}
+            <span class="px-3 py-1.5 bg-zinc-800 border border-zinc-700 rounded-full text-sm text-zinc-500">+45 more</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Community Wins 🦞</h2>
+        <p class="text-zinc-400">Real results from real users</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <p class="text-zinc-300 mb-4">"Saved $4,200 negotiating a car purchase. Clawd researched dealer costs, prepared rebuttals, coached me through the whole thing."</p>
+          <div class="text-sm text-zinc-500">@astuyve</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <p class="text-zinc-300 mb-4">"Nothing short of an iPhone moment. This is what personal AI should have been all along."</p>
+          <div class="text-sm text-zinc-500">Twitter user</div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <p class="text-zinc-300 mb-4">"Replaced my $500/mo virtual assistant. Clawd handles scheduling, email triage, and research better."</p>
+          <div class="text-sm text-zinc-500">Solopreneur</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="max-w-6xl mx-auto px-6 py-16">
+      <div class="bg-gradient-to-br from-orange-950/50 to-zinc-900 border border-orange-500/20 rounded-2xl p-8 md:p-12 text-center">
+        <div class="text-4xl mb-4">🦞</div>
+        <h2 class="text-3xl font-bold mb-4">The Clawd Report</h2>
+        <p class="text-zinc-400 mb-8 max-w-lg mx-auto">
+          Daily insights on AI agents, new skills, automation tips, and ecosystem updates. Join 500+ lobster enthusiasts.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="you@example.com"
+            class="flex-1 px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg focus:outline-none focus:border-orange-500"
+          />
+          <button type="submit" class="px-6 py-3 bg-orange-500 hover:bg-orange-400 text-zinc-950 font-semibold rounded-lg transition">
+            Subscribe
+          </button>
+        </form>
+        <p class="text-zinc-500 text-sm mt-4">Free forever. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+    <!-- Services (moved way down) -->
+    <section id="services" class="border-t border-zinc-800">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-3">Need Help Getting Started?</h2>
+          <p class="text-zinc-400">Skip the learning curve with a guided setup session</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+            <div class="text-sm text-zinc-400 mb-1">Standard Setup</div>
+            <div class="text-3xl font-bold mb-2">$149</div>
+            <p class="text-zinc-400 text-sm mb-4">60-min session + 3 skills + 7 days support</p>
+            <ul class="text-sm text-zinc-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><span class="text-orange-400">✓</span> Full installation</li>
+              <li class="flex items-center gap-2"><span class="text-orange-400">✓</span> 3 skills of your choice</li>
+              <li class="flex items-center gap-2"><span class="text-orange-400">✓</span> Messaging setup</li>
+            </ul>
+            <a href="https://buy.stripe.com/9B6bJ07lkaGz8Qce7fbV601" class="block w-full text-center py-3 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition">
+              Get Started
+            </a>
+          </div>
+          <div class="bg-zinc-900 border border-orange-500/30 rounded-xl p-6">
+            <div class="text-sm text-orange-400 mb-1">Premium Setup</div>
+            <div class="text-3xl font-bold mb-2">$249</div>
+            <p class="text-zinc-400 text-sm mb-4">Everything + custom integrations + priority support</p>
+            <ul class="text-sm text-zinc-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><span class="text-orange-400">✓</span> Everything in Standard</li>
+              <li class="flex items-center gap-2"><span class="text-orange-400">✓</span> Custom integrations</li>
+              <li class="flex items-center gap-2"><span class="text-orange-400">✓</span> 30 days priority support</li>
+            </ul>
+            <a href="https://buy.stripe.com/3cIfZggVU3e72rO8MVbV602" class="block w-full text-center py-3 bg-orange-500 hover:bg-orange-400 text-zinc-950 font-semibold rounded-lg transition">
+              Get Premium
+            </a>
+          </div>
+        </div>
+        <p class="text-center text-zinc-500 text-sm mt-6">
+          Or <a href="https://cal.com/jhillin/30min" class="text-orange-400 hover:underline">book a free consultation</a> first
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800">
+      <div class="max-w-6xl mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="flex items-center gap-2 text-zinc-500 text-sm">
+            <span>🦞</span>
+            <span>Built for the Clawd.bot community</span>
+          </div>
+          <div class="flex gap-6 text-sm text-zinc-400">
+            <a href="https://github.com/clawdbot/clawdbot" class="hover:text-zinc-100 transition">GitHub</a>
+            <a href="https://clawdhub.com" class="hover:text-zinc-100 transition">ClawdHub</a>
+            <a href="https://clawd.bot" class="hover:text-zinc-100 transition">clawd.bot</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
